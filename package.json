@@ -1,0 +1,41 @@
+{
+  "name": "samwise-frontend",
+  "version": "2.0.0",
+  "description": "",
+  "main": "src/entry.jsx",
+  "engines": {
+    "node": "6.2.2",
+    "npm": "3.9.5"
+  },
+  "scripts": {
+    "wpack": "webpack -w",
+    "wpack-prod": "PROD_ENV='true' webpack -p",
+    "sass": "sass -w ./src/scss/head.scss:./style.css",
+    "sass-prod": "sass ./src/scss/head.scss:./style.css --style compressed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tjtorola/samwise"
+  },
+  "author": "Tyler Torola",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tjtorola/samwise/issues"
+  },
+  "homepage": "https://github.com/tjtorola/samwise#readme",
+  "dependencies": {
+    "react": "^0.14.2",
+    "react-dom": "^0.14.2",
+    "redux": "^3.5.2",
+    "react-redux": "^4.4.5"
+  },
+  "devDependencies": {
+    "babel-core": "^6.2.0",
+    "babel-loader": "^6.2.0",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.1.18",
+    "node-sass": "^3.4.2",
+    "sass-loader": "^4.0.2",
+    "webpack": "^1.12.2"
+  }
+}
