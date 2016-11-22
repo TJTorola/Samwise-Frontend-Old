@@ -1,12 +1,13 @@
 const webpack = require('webpack');
+const path = require("path");
 
 const PROD = JSON.parse(process.env.PROD_ENV || 'false');
 
 module.exports = {
   context: __dirname,
-  entry: ["./src/entry.jsx"],
+  entry: ["./src/js/entry.jsx"],
   output: {
-    path: './',
+    path: path.resolve('./'),
     filename: "bundle.js"
   },
   module: {
@@ -27,7 +28,7 @@ module.exports = {
   },
   devtool: 'source-maps',
   resolve: {
-    root: './src',
+    root: path.resolve('./src/js'),
     extensions: ["", ".js", ".jsx" ]
   },
   plugins: PROD ? [
