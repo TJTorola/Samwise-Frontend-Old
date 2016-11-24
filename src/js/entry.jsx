@@ -1,8 +1,9 @@
 import React from 'react';
-import ReactDom from 'react-dom';
+import { render } from 'react-dom';
+import { AppContainer } from 'react-hot-loader';
 
 import Root from 'components/base/root';
 
 document.addEventListener("DOMContentLoaded", () => {
-	ReactDom.render(<Root />, document.querySelector('#root'));
+	render(<Root />, document.querySelector('#root'));
 });

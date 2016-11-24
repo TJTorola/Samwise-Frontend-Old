@@ -1,5 +1,9 @@
 import React from 'react';
 
+import Header from './header/view';
+
 export default () => (
-	<div />
+	<main>
+		<Header />
+	</main>
 );
