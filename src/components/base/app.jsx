@@ -4,7 +4,7 @@ import Header from './header/view';
 import Nav from './nav/view';
 
 export default () => (
-	<main className="h-100 bg-black-05">
+	<main className="h-100 bg-black-05 avenir">
 		<Header />
 		<Nav />
 	</main>
