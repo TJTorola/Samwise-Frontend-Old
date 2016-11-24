@@ -10,7 +10,6 @@ const checkLogin = () => {
 
 export default () => (
 	<Router history={ browserHistory }>
-		<Route path="/" component={ App } onEnter={ checkLogin }>
-		</Route>
+		<Route path="/" component={ App } onEnter={ checkLogin } />
 	</Router>
 );
