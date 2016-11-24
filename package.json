@@ -8,11 +8,9 @@
     "npm": "3.9.5"
   },
   "scripts": {
-    "start": "node server.js",
-    "wpack": "webpack -w",
-    "wpack-prod": "PROD_ENV='true' webpack -p",
-    "sass": "sass -w ./src/scss/head.scss:./style.css",
-    "sass-prod": "sass ./src/scss/head.scss:./style.css --style compressed"
+    "dev": "node dev/server.js",
+    "build": "PROD_ENV='true' webpack -p",
+    "prod": "node server.js"
   },
   "repository": {
     "type": "git",

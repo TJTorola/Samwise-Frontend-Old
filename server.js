@@ -1,23 +1,6 @@
 const path          = require('path'),
-      webpack       = require('webpack'),
       express       = require('express'),
-      devMiddleware = require('webpack-dev-middleware'),
-      hotMiddleware = require('webpack-hot-middleware'),
-      config        = require('./webpack.config'),
-      app           = express(),
-      compiler      = webpack(config);
-
-app.use(devMiddleware(compiler, {
-	publicPath: config.output.publicPath,
-	historyApiFallback: true,
-	noInfo: false,
-	stats: {
-    colors: true,
-    chunks: false
-  }
-}));
-
-app.use(hotMiddleware(compiler));
+      app           = express();
 
 app.get('*', function (req, res) {
 	if (req.url === '/css/tachyons.css') {

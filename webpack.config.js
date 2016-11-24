@@ -3,12 +3,12 @@ const path = require("path");
 
 const PROD = JSON.parse(process.env.PROD_ENV || 'false');
 
-module.exports = {
+const dev = {
   devtool: 'cheap-module-source-map',
   entry: [
     'react-hot-loader/patch',
     'webpack-hot-middleware/client',
-    './src/js/entry.jsx'
+    './dev/entry.jsx'
   ],
   output: {
     path: path.resolve('./js'),
@@ -26,20 +26,49 @@ module.exports = {
     root: path.resolve('./src/js'),
     extensions: ["", ".js", ".jsx" ]
   },
-  plugins: PROD ? [
-      new webpack.DefinePlugin({
-        'process.env':{
-          'NODE_ENV': JSON.stringify('production')
-        }
-      }),
-      new webpack.optimize.UglifyJsPlugin({
-        compress:{
-          warnings: false
-        }
-      })
-    ] : [
+  plugins: [
       new webpack.optimize.OccurenceOrderPlugin(),
       new webpack.HotModuleReplacementPlugin(),
       new webpack.NoErrorsPlugin(),
     ]
 };
+
+const build = {
+  entry: ['./src/js/entry.jsx'],
+  output: {
+    path: path.resolve('./js'),
+    filename: 'bundle.js'
+  },
+  module: {
+    loaders: [
+      {
+        test: [/\.jsx?$/],
+        exclude: /(node_modules)/,
+        loader: 'babel',
+        query: {
+          presets: ['es2015', 'react'],
+          plugins: []
+        }
+      }
+    ]
+  },
+  devtool: 'source-maps',
+  resolve: {
+    root: path.resolve('./src/js'),
+    extensions: ["", ".js", ".jsx" ]
+  },
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env':{
+        'NODE_ENV': JSON.stringify('production')
+      }
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      compress:{
+        warnings: false
+      }
+    })
+  ]
+};
+
+module.exports = PROD ? build : dev;
