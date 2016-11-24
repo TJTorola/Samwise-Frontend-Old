@@ -23,7 +23,7 @@ const dev = {
     }]
   },
   resolve: {
-    root: path.resolve('./src/js'),
+    root: path.resolve('./src'),
     extensions: ["", ".js", ".jsx" ]
   },
   plugins: [
@@ -33,28 +33,26 @@ const dev = {
     ]
 };
 
-const build = {
-  entry: ['./src/js/entry.jsx'],
+const min = {
+  entry: ['./src/entry.jsx'],
   output: {
     path: path.resolve('./js'),
     filename: 'bundle.js'
   },
   module: {
-    loaders: [
-      {
-        test: [/\.jsx?$/],
-        exclude: /(node_modules)/,
-        loader: 'babel',
-        query: {
-          presets: ['es2015', 'react'],
-          plugins: []
-        }
+    loaders: [{
+      test: /\.jsx?$/,
+      exclude: /node_module/,
+      loader: 'babel',
+      query: {
+        presets: ['es2015', 'react'],
+        plugins: []
       }
-    ]
+    }]
   },
   devtool: 'source-maps',
   resolve: {
-    root: path.resolve('./src/js'),
+    root: path.resolve('./src'),
     extensions: ["", ".js", ".jsx" ]
   },
   plugins: [
@@ -71,4 +69,4 @@ const build = {
   ]
 };
 
-module.exports = PROD ? build : dev;
+module.exports = PROD ? min : dev;
