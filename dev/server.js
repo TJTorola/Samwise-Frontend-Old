@@ -20,8 +20,8 @@ app.use(devMiddleware(compiler, {
 app.use(hotMiddleware(compiler));
 
 app.get('*', function (req, res) {
-	if (req.url === '/css/tachyons.css') {
-		res.sendFile(path.join(__dirname, '..', 'css', 'tachyons.css'));
+	if (folder === 'css' || folder === 'js') {
+		res.sendFile(path.resolve(`.${ req.url }`));
 	} else {
 		res.sendFile(path.join(__dirname, 'index.html'));
 	}
