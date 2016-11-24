@@ -20,6 +20,7 @@ app.use(devMiddleware(compiler, {
 app.use(hotMiddleware(compiler));
 
 app.get('*', function (req, res) {
+	const folder = req.url.split('/')[1];
 	if (folder === 'css' || folder === 'js') {
 		res.sendFile(path.resolve(`.${ req.url }`));
 	} else {
