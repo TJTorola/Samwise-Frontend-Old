@@ -1,6 +1,6 @@
 import { createStore } from 'redux';
 
-import reducers from './reducers';
+import reducers from 'reducers/combine';
 import middleware from './middleware';
 
 const configureStore = (preloadedState = {}) => createStore(
