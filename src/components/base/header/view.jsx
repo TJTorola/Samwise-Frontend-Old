@@ -24,9 +24,12 @@ const ICON_CLASSES = [
 	'hover-bg-dark-turquoise'
 ].join(' ');
 
-export default () => (
+export default ({ shown, toggleNav }) => (
 	<header className="bg-turquoise cf">
 		<h1 className={ HEADER_CLASSES }><strong>Admin P</strong>4x4</h1>
-		<Icon i="plus" className={ ICON_CLASSES } />
+		<Icon 
+			i={ shown ? "minus" : "plus" } 
+			className={ ICON_CLASSES } 
+			onClick={ toggleNav } />
 	</header>
 );

@@ -4,6 +4,8 @@ export default (state = true, action) => {
 			return true;
 		case "HIDE_NAV":
 			return false;
+		case "TOGGLE_NAV":
+			return !state;
 		default:
 			return state;
 	}
