@@ -19,7 +19,9 @@ const ICON_CLASSES = [
 	'f4',
 	'pa3',
 	'fl',
-	'white'
+	'white',
+	'pointer',
+	'hover-bg-dark-turquoise'
 ].join(' ');
 
 export default () => (
