@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { MENU } from 'settings/links';
+import Link from './link';
 
 const HEADER_CLASSES = [
 	'ma0',
@@ -10,15 +11,6 @@ const HEADER_CLASSES = [
 	'ttc',
 	'pa3',
 	'f6'
-].join(' ');
-
-const LI_CLASSES = [
-	'white-40',
-	'pv3',
-	'ph4',
-	'hover-white-60',
-	'hover-bg-black',
-	'pointer'
 ].join(' ');
 
 const menu = () => (
@@ -35,7 +27,7 @@ const menu = () => (
 );
 
 const link = (info, idx) => (
-	<li key={ idx } className={ LI_CLASSES }>{ info.title }</li>
+	<Link key={ idx } info={ info } />
 );
 
 export default () => (

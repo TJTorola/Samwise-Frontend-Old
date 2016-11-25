@@ -1,7 +1,7 @@
 export const MENU = {
 	resources: [{
 			title : "Invoices",
-			icon  : "credit-card",
+			icon  : "creditCard",
 			link  : "/invoices"
 		},
 		{
