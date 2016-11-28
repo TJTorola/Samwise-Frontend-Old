@@ -16,9 +16,9 @@ const NAV = [
 
 const nav = loggedIn => {
 	if (loggedIn) {
-		return NAV;
+		return `${ NAV } is-logged-in`;
 	} else {
-		return `${ NAV } is-not-logged`;
+		return NAV;
 	}
 }
 

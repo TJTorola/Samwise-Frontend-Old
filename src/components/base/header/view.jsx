@@ -5,21 +5,21 @@ import { Icon } from 'components/modules';
 const HEADER = [
 	'bg-turquoise',
 	'relative',
-	'fast-in-slow-out'
+	'fast-in-slow-out',
+	'flex'
 ].join(' ');
 
 const header = loggedIn => {
 	if (loggedIn) {
-		return HEADER;
+		return `${ HEADER } is-logged-in`;
 	} else {
-		return `${ HEADER } is-not-logged`;
+		return HEADER;
 	}
 }
 
 const ICON = [
 	'f4',
 	'pa3',
-	'fl',
 	'white',
 	'pointer',
 	'hover-bg-dark-turquoise'
