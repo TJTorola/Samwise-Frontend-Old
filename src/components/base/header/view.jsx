@@ -2,7 +2,23 @@ import React from 'react';
 
 import { Icon } from 'components/modules';
 
-const HEADER_CLASSES = [
+const HEADER = [
+	'bg-turquoise',
+	'relative',
+	'z-1',
+	'cf',
+	'fast-in-slow-out'
+].join(' ');
+
+const header = loggedIn => {
+	if (loggedIn) {
+		return HEADER;
+	} else {
+		return `${ HEADER } is-not-logged`;
+	}
+}
+
+const H1 = [
 	'bg-dark-turquoise',
 	'white',
 	'f4',
@@ -15,7 +31,7 @@ const HEADER_CLASSES = [
 	'fl'
 ].join(' ');
 
-const ICON_CLASSES = [
+const ICON = [
 	'f4',
 	'pa3',
 	'fl',
@@ -24,12 +40,12 @@ const ICON_CLASSES = [
 	'hover-bg-dark-turquoise'
 ].join(' ');
 
-export default ({ shown, toggleNav }) => (
-	<header className="bg-turquoise cf">
-		<h1 className={ HEADER_CLASSES }><strong>Admin P</strong>4x4</h1>
+export default ({ shown, toggleNav, logged }) => (
+	<header className={ header(logged) }>
+		<h1 className={ H1 }><strong>Admin P</strong>4x4</h1>
 		<Icon 
 			i={ shown ? "minus" : "plus" } 
-			className={ ICON_CLASSES } 
+			className={ ICON } 
 			onClick={ toggleNav } />
 	</header>
 );
