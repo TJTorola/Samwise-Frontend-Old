@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { MENU } from 'settings/links';
-import Link from './link';
+import H1 from './h1';
+import Menu from './menu';
 
 const NAV = [
 	'relative',
@@ -9,7 +9,9 @@ const NAV = [
 	'bg-black-90',
 	'w5',
 	'h-100',
-	'fast-in-slow-out'
+	'fast-in-slow-out',
+	'flex',
+	'flex-column'
 ].join(' ');
 
 const nav = loggedIn => {
@@ -20,35 +22,9 @@ const nav = loggedIn => {
 	}
 }
 
-const H2 = [
-	'ma0',
-	'bg-black',
-	'white-60',
-	'normal',
-	'ttc',
-	'pa3',
-	'f6'
-].join(' ');
-
-const menu = () => (
-	Object.keys(MENU).map((catagory, idx) => (
-		<div key={ idx }>
-			<h2 className={ H2 }>
-				{ catagory }
-			</h2>
-			<ul className="list pa0 ma0">
-				{ MENU[catagory].map(link) }
-			</ul>
-		</div>
-	))
-);
-
-const link = (info, idx) => (
-	<Link key={ idx } info={ info } />
-);
-
 export default ({ shown, logged }) => (
 	<nav className={ nav(logged) }>
-		{ menu() }
+		<H1 />
+		<Menu />
 	</nav>
 );
