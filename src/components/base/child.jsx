@@ -1,5 +1,7 @@
 import React from 'react';
 
 export default ({ page }) => (
-	<div />
+	<div>
+		{ page }
+	</div>
 );
