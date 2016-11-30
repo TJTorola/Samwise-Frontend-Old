@@ -8,11 +8,11 @@ export default class extends React.Component {
 
 		this.state = { working: false };
 		this.props = props;
-		this.work = this.work.bind(this);
-		this.stop = this.stop.bind(this);
+		this.work  = this.work.bind(this);
+		this.stop  = this.stop.bind(this);
 	}
 
-	icon() {
+	i() {
 		const { working } = this.state;
 		return working ? 'gear' : this.props.i;
 	}
@@ -34,8 +34,8 @@ export default class extends React.Component {
 	}
 
 	render() {
-		const icon    = this.icon.bind(this)(),
-		      classes = this.className.bind(this)();
+		const classes = this.className.bind(this)(),
+		      icon    = this.i.bind(this)();
 
 		return <Icon i={ icon } className={ classes } />;
 	}

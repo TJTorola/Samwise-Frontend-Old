@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { WorkingIcon } from 'components/modules';
-let icon; // Hoisting
+import { ConfirmedIcon } from 'components/modules';
+let icon;
 
 const FORM = [
 	'center-fixed',
@@ -11,7 +11,7 @@ const FORM = [
 
 const submit = e => {
 	e.preventDefault();
-	
+	icon.work();
 
 	console.log('here');
 }
@@ -22,6 +22,6 @@ export default () => (
 		<input type="password"/>
 
 		<input type="submit" value="Submit"/>
-		<WorkingIcon i="dollar" ref={ el => icon = el } />
+		<ConfirmedIcon i="user" ref={ el => window.icon = el } />
 	</form>
 );
