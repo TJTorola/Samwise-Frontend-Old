@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { ConfirmedIcon } from 'components/modules';
-let icon;
+import { WorkingButton } from 'components/modules';
 
 const FORM = [
 	'center-fixed',
@@ -11,9 +10,6 @@ const FORM = [
 
 const submit = e => {
 	e.preventDefault();
-	icon.work();
-
-	console.log('here');
 }
 
 export default () => (
@@ -21,7 +17,6 @@ export default () => (
 		<input type="text"/>
 		<input type="password"/>
 
-		<input type="submit" value="Submit"/>
-		<ConfirmedIcon i="user" ref={ el => window.icon = el } />
+		<WorkingButton i="user">Submit</WorkingButton>
 	</form>
 );
