@@ -1,6 +1,6 @@
 import React from 'react';
 
-import H1 from './h1';
+import Header from './header';
 import Menu from './menu';
 
 const NAV = [
@@ -14,17 +14,18 @@ const NAV = [
 	'flex-column'
 ].join(' ');
 
-const nav = loggedIn => {
-	if (loggedIn) {
-		return `${ NAV } is-logged-in`;
-	} else {
-		return NAV;
-	}
+const nav = ({ expanded, logged }) => {
+	let classes = [];
+
+	if (logged) { classes.push('is-logged-in'); }
+	if (!expanded) { classes.push('is-retracted'); }
+
+	return `${ NAV } ${ classes.join(' ') }`;
 }
 
-export default ({ shown, logged }) => (
-	<nav className={ nav(logged) }>
-		<H1 />
+export default (props) => (
+	<nav className={ nav(props) }>
+		<Header />
 		<Menu />
 	</nav>
 );
