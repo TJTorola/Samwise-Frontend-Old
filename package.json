@@ -11,7 +11,7 @@
     "dev": "node dev/server.js",
     "build": "PROD_ENV='true' webpack -p",
     "prod": "node server.js",
-    "test": "NODE_PATH=src ava",
+    "test": "NODE_PATH=src ava --tap | tap-nyan",
     "test:w": "NODE_PATH=src ava --watch"
   },
   "repository": {
@@ -26,7 +26,8 @@
   "ava": {
     "babel": "inherit",
     "require": [
-      "babel-register"
+      "babel-register",
+      "./test/helpers/setup.js"
     ]
   },
   "homepage": "https://github.com/tjtorola/samwise#readme",
@@ -52,8 +53,10 @@
     "react-hot-loader": "^3.0.0-beta.6",
     "react-test-renderer": "^15.4.1",
     "sass-loader": "^4.0.2",
+    "sinon": "^1.17.6",
     "style-loader": "^0.13.1",
     "tachyons": "^4.5.5",
+    "tap-nyan": "^1.1.0",
     "webpack": "^1.12.2",
     "webpack-dev-middleware": "^1.8.4",
     "webpack-dev-server": "^1.16.2",
