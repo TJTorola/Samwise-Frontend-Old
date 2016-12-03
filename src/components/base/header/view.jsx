@@ -25,10 +25,10 @@ const ICON = [
 	'hover-bg-dark-turquoise'
 ].join(' ');
 
-export default ({ shown, toggleNav, logged }) => (
+export default ({ navShown, toggleNav, logged }) => (
 	<header className={ header(logged) }>
 		<Icon 
-			i={ shown ? "minus" : "plus" } 
+			i={ navShown ? "minus" : "plus" } 
 			className={ ICON } 
 			onClick={ toggleNav } />
 	</header>

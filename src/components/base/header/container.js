@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import View from './view';
 
 const mapStateToProps = state => ({
-	shown: state.dashboard.nav,
+	navShown: state.dashboard.nav,
 	logged: state.auth
 });
 
