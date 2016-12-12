@@ -3,10 +3,10 @@ import React from 'react';
 import { Icon } from 'components/modules';
 
 const LI = [
-	'white-40',
+	'white-60',
 	'pv2',
 	'ph3',
-	'hover-white-60',
+	'hover-white-90',
 	'hover-bg-black',
 	'pointer',
 	'flex',

@@ -6,7 +6,7 @@ import Link from './link';
 const H2 = [
 	'ma0',
 	'bg-black',
-	'white-60',
+	'white-90',
 	'normal',
 	'ttc',
 	'pa3',
@@ -17,7 +17,7 @@ const link = (info, idx) => (
 	<Link key={ idx } info={ info } />
 );
 
-const subMenu = (catagory, idx) => (
+export default (catagory, idx) => (
 	<div key={ idx }>
 		<h2 className={ H2 }>
 			{ catagory }
@@ -25,11 +25,5 @@ const subMenu = (catagory, idx) => (
 		<ul className="list pa0 ma0">
 			{ MENU[catagory].map(link) }
 		</ul>
-	</div>
-);
-
-export default () => (
-	<div>
-		{ Object.keys(MENU).map(subMenu) }
 	</div>
 );

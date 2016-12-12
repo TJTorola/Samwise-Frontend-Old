@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { MENU } from 'settings/links';
 import Header from './header';
 import Menu from './menu';
 
@@ -26,6 +27,6 @@ const nav = ({ expanded, logged }) => {
 export default (props) => (
 	<nav className={ nav(props) }>
 		<Header />
-		<Menu />
+		{ Object.keys(MENU).map(Menu) }
 	</nav>
 );

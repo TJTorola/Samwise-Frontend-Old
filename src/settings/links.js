@@ -6,24 +6,24 @@ export const MENU = {
 		},
 		{
 			title : "Offers",
-			icon  : "box",
+			icon  : "archive",
 			link  : "/offers"
 		},
 		{
 			title : "Pages",
-			icon  : "page",
+			icon  : "fileText",
 			link  : "/pages"
 		},
 		{
 			title : "Catalogs",
-			icon  : "menu",
+			icon  : "list",
 			link  : "/catalogs"
 		}
 	],
 	settings: [
 		{
 			title : "Admin Settings",
-			icon  : "gears",
+			icon  : "cogs",
 			link  : "/admin-settings"
 		}
 	]
