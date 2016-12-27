@@ -6,8 +6,24 @@ import sinon from 'sinon';
 
 import { Button } from 'components/modules';
 
-test.todo('It passes in onClick');
+test('It passes in onClick', t => {
+	const onClick = sinon.spy(() => {}),
+	      props = {
+	      	onClick,
+	      	label: 'test'
+	      },
+	      wrapper = shallow(<Button { ...props } />);
 
-test.todo('It allows for multiple colors');
+	wrapper.simulate('click');
+	t.true(onClick.calledOnce);
+});
 
-test.todo('It displays given label');
+test('It displays given label', t => {
+	const props = {
+	      	onClick: () => {},
+	      	label: 'test'
+	      },
+	      wrapper = shallow(<Button { ...props } />);
+
+	t.is(wrapper.text(), 'test');
+});

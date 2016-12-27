@@ -16,8 +16,14 @@ const BUTTON = [
 	'hover-b--orange'
 ].join(' ');
 
-export default ({ children }) => (
-	<div className={ BUTTON }>
-		{ children }
-	</div>
-);
+const classes = given => given ? `${ given } ${ BUTTON }` : BUTTON;
+
+export default (props) => {
+	const { label, className, ...rest } = props;
+
+	return (
+		<div className={ classes(className) } { ...rest }>
+			{ label }
+		</div>
+	);
+};

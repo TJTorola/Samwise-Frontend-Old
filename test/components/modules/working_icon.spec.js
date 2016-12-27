@@ -22,7 +22,7 @@ test('can work', t => {
 
 	t.true(instance.render().props.i === 'user');
 	instance.work();
-	t.true(instance.render().props.i === 'gear');
+	t.true(instance.render().props.i === 'cog');
 });
 
 test('can stop', t => {
@@ -30,7 +30,7 @@ test('can stop', t => {
 	      instance = wrapper.instance();
 
 	instance.work();
-	t.true(instance.render().props.i === 'gear');
+	t.true(instance.render().props.i === 'cog');
 	instance.stop();
 	t.true(instance.render().props.i === 'user');
 });

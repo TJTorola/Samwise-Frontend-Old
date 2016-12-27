@@ -40,12 +40,6 @@ test('It includes a header', t => {
 	t.is(wrapper.find(Header).length, 1);
 });
 
-test('It includes a menu', t => {
-	const wrapper = shallow(<Nav { ...defaultProps } />);
-
-	t.is(wrapper.find(Menu).length, 1);
-});
-
 test('It expands', t => {
 	const wrapper = shallow(<Nav { ...defaultProps } />);
 

@@ -14,7 +14,7 @@ export default class extends React.Component {
 
 	i() {
 		const { working } = this.state;
-		return working ? 'gear' : this.props.i;
+		return working ? 'cog' : this.props.i;
 	}
 
 	className() {
